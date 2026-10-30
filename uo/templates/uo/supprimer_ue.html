@@ -1,0 +1,49 @@
+{% extends 'uo/menu.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}Supprimer l'UE : {{ ue.titre }} {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <div class="container-fluid">
+
+
+    </div>
+    <div class="text-center">
+        <p>
+            Titre : {{ ue.titre}}</br>
+            Description : {{ ue.description }}</br>
+            CM : {{ ue.cm }}</br>
+            TD : {{ ue.td }}</br>
+            TP : {{ ue.tp }}</br>
+            Crédits {{ ue.credits }}</br>
+
+            <p>Liste de ou des responsable(s)</p>
+            {% for r in responsables %}
+            <li>Nom : {{ r.username }}</li>
+            <li>Email : {{ r.email }}</li>
+            {% endfor %}
+        </br>
+     
+        <p>Liste de ou des formation(s) qui proposent cette UE</p>
+            {% for f in formations %}
+            <li>Intitulé : {{ f.intitule }}</li>
+            <a href="{% url 'afficher_formation' f.id %}">plus d'info sur la formation</a>
+            {% endfor %}
+        
+
+
+       
+        </p>
+    </div>
+        
+        <form method="post" class="row g-3">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary" name="delete">supprimer</button>
+        </form>
+
+    {% endblock %}
+</body>
+</html>

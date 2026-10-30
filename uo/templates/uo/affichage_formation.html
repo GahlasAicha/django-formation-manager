@@ -1,0 +1,31 @@
+{% extends 'uo/menu.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    {% block title %} Details Formation {{ formation.intitule }}{% endblock %}
+{% block content %}
+
+<div class="container-fluid">
+<p>{{ formation.intitule }} ( n° {{ formation.id }} )</p>
+<ol>
+    <ul class="list-group">
+        <li>Intitulé : {{ formation.intitule }}</li>
+        <li>Description : {{ formation.description }}</li>
+        <li>responsable : {{ responsable.username }}</li></br>
+    
+        <p>Liste des UE qui proposent cette formation</p>
+        {% for u in ue %}
+        <li>Titre : {{ u.titre }}</li>
+        <a href="{% url 'afficher_ue' u.id %}">plus d'infos sur l'UE</a>
+        <p>-------------------------------------------------------</p>
+        
+        {% endfor %}
+    </ul>
+</ol>
+    
+</div>
+{% endblock %}
+</body>
+</html>

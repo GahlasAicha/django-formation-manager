@@ -1,0 +1,38 @@
+[
+{
+    "model": "uo.formation",
+    "pk": 2,
+    "fields": {
+        "intitule": "Licence Informatique-Parcours Ingénierie informatique",
+        "description": "Parcours axé sur le développement et l'algorithmique",
+        "responsable": 2
+    }
+},
+{
+    "model": "uo.formation",
+    "pk": 3,
+    "fields": {
+        "intitule": "Licence Informatique-Parcous MIAGE",
+        "description": "Formation axé sur le développement web et la communication",
+        "responsable": 4
+    }
+},
+{
+    "model": "uo.formation",
+    "pk": 4,
+    "fields": {
+        "intitule": "Master Informatique",
+        "description": "Bac +5 informatique",
+        "responsable": null
+    }
+},
+{
+    "model": "uo.formation",
+    "pk": 5,
+    "fields": {
+        "intitule": "Master MIAGE",
+        "description": "Bac +5 dans la continuité de la licence MIAGE",
+        "responsable": 3
+    }
+}
+]

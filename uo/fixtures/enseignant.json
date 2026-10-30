@@ -1,0 +1,74 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$FqFN5Rm41HdJhvD40byQii$1rf//PMZn74wePKBowHlOBNj3vh4u2qhIBzZ137Oaco=",
+    "last_login": "2024-12-18T19:56:50.208Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-12-18T19:24:54.642Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$oWfYbqmJwLQ0IQLfHBI0hV$3fLbd+neVFsBhKkYs+oD1IYYfzVKygdYN5g4D8WK4Og=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "F_Loulergue",
+    "first_name": "",
+    "last_name": "",
+    "email": "frederic.loulergue@univ-orleans.fr",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-18T20:10:22Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$aThVttEGZJqTwfKkflj9HK$INzoU7H7YIWh1nbc1ZCHw3ffv0bmongZ13LiI6pldFI=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "T_Martinod",
+    "first_name": "",
+    "last_name": "",
+    "email": "timotee.martinod@univ-orleans.fr",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-18T20:15:02Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$xxlGuUrs1ScGTC7RMsQY74$iF+8XPEcf+zQv+zdb8Wf7kGs9uOcIg6HjFgHVl45MKs=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "JM_Couvreur",
+    "first_name": "",
+    "last_name": "",
+    "email": "jean-michel.couvreur@univ-orleans.fr",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-18T20:16:56Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

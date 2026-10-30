@@ -1,0 +1,41 @@
+{% extends 'uo/menu.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    {% block title %}Details UE {{ ue.titre }}{% endblock %}
+ {% block content %}   
+
+
+<p>{{ ue.titre }} ( n° {{ ue.id }} )</p>
+<ol>
+    <ul class="list-group">
+        <li>Description : {{ ue.description }}</li>
+        <li>Heures de CM : {{ ue.cm }}</li>
+        <li>Heures de TD : {{ ue.td }}</li>
+        <li>Heures de TP : {{ ue.tp }}</li>
+        <li>Nombre de crédits : {{ ue.credits }}</li>
+    </br>
+    <p>Liste de ou des responsable(s)</p>
+        {% for r in responsables %}
+        <li>Nom : {{ r.username }}</li>
+        <li>Email : {{ r.email }}</li></br>
+        {% endfor %}
+    </br>
+    <p>Liste de ou des formation(s) qui proposent cette UE</p>
+        {% for f in formations %}
+        <li>Intitulé : {{ f.intitule }}</li>
+        <a href="{% url 'afficher_formation' f.id %}">plus d'info sur la formation</a>
+        {% endfor %}
+    </br>
+    <a href="{% url 'modifier_ue' ue.id %}" class="text-success">Modifier l'ue</a>
+    </br>
+    <a href="{% url 'supprimer_ue' ue.id %}" class="text-danger">Supprimer l'ue</a>
+    </ul>
+</ol>
+    
+    
+{% endblock %}
+</body>
+</html>

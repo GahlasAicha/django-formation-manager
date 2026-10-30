@@ -1,0 +1,23 @@
+{% extends 'uo/menu.html' %}
+
+{% block title %}Index de toutes les formations{% endblock %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    {% block content %}
+    <ol>
+        <ul>{% for f in formations %}
+            <li>Intitulé formation n° {{ f.id }}: {{ f.intitule }}</li>
+            <a href="{% url 'afficher_formation' f.id %}">-> plus d'infos</a></br>
+            <a href="{% url 'info_pour_responsable' f.id %}">-> page de responsable de la formation</a>
+            {% endfor %}
+        </ul>
+    </ol>
+    
+    {% endblock %}
+</body>
+</html>

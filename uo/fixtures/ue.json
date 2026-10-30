@@ -1,0 +1,240 @@
+[
+{
+    "model": "uo.ue",
+    "pk": 2,
+    "fields": {
+        "titre": "C",
+        "description": "Language C",
+        "cm": 10,
+        "td": 5,
+        "tp": 20,
+        "credits": 7,
+        "formations": [
+            2,
+            4
+        ],
+        "responsables": [
+            3
+        ]
+    }
+},
+{
+    "model": "uo.ue",
+    "pk": 3,
+    "fields": {
+        "titre": "C++",
+        "description": "Language C++",
+        "cm": 10,
+        "td": 5,
+        "tp": 20,
+        "credits": 5,
+        "formations": [
+            2,
+            4
+        ],
+        "responsables": [
+            3
+        ]
+    }
+},
+{
+    "model": "uo.ue",
+    "pk": 4,
+    "fields": {
+        "titre": "FrameWeb",
+        "description": "Langage Docker et GitHub",
+        "cm": 5,
+        "td": 0,
+        "tp": 20,
+        "credits": 5,
+        "formations": [
+            2,
+            3,
+            5
+        ],
+        "responsables": [
+            2,
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "uo.ue",
+    "pk": 5,
+    "fields": {
+        "titre": "Communication",
+        "description": "Technique de communication",
+        "cm": 20,
+        "td": 5,
+        "tp": 0,
+        "credits": 3,
+        "formations": [
+            3,
+            5
+        ],
+        "responsables": [
+            4
+        ]
+    }
+},
+{
+    "model": "uo.ue",
+    "pk": 6,
+    "fields": {
+        "titre": "Logique",
+        "description": "Cour de logique",
+        "cm": 15,
+        "td": 15,
+        "tp": 6,
+        "credits": 4,
+        "formations": [
+            2,
+            4
+        ],
+        "responsables": [
+            3
+        ]
+    }
+},
+{
+    "model": "uo.ue",
+    "pk": 7,
+    "fields": {
+        "titre": "Algèbre relationnelle",
+        "description": "Cour d'algèbre relationnelle et langage SQL",
+        "cm": 15,
+        "td": 15,
+        "tp": 10,
+        "credits": 6,
+        "formations": [
+            3,
+            5
+        ],
+        "responsables": [
+            4
+        ]
+    }
+},
+{
+    "model": "uo.ue",
+    "pk": 8,
+    "fields": {
+        "titre": "Design",
+        "description": "Introduction au web Design",
+        "cm": 10,
+        "td": 15,
+        "tp": 15,
+        "credits": 2,
+        "formations": [
+            3
+        ],
+        "responsables": [
+            3
+        ]
+    }
+},
+{
+    "model": "uo.ue",
+    "pk": 9,
+    "fields": {
+        "titre": "Analyse des algorithmes",
+        "description": "Cour d'analyse de l'efficacité des algorithmes",
+        "cm": 10,
+        "td": 20,
+        "tp": 6,
+        "credits": 4,
+        "formations": [
+            2,
+            4,
+            5
+        ],
+        "responsables": [
+            2,
+            4
+        ]
+    }
+},
+{
+    "model": "uo.ue",
+    "pk": 10,
+    "fields": {
+        "titre": "Conception Orienté Objet",
+        "description": "Analyse et compréhension des différents design pattern",
+        "cm": 10,
+        "td": 15,
+        "tp": 10,
+        "credits": 5,
+        "formations": [
+            2
+        ],
+        "responsables": [
+            2,
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "uo.ue",
+    "pk": 11,
+    "fields": {
+        "titre": "Anglais",
+        "description": "Cour d'anglais pour l'informatique et le monde de l'entreprise",
+        "cm": 0,
+        "td": 20,
+        "tp": 0,
+        "credits": 3,
+        "formations": [
+            2,
+            3,
+            4,
+            5
+        ],
+        "responsables": [
+            2
+        ]
+    }
+},
+{
+    "model": "uo.ue",
+    "pk": 12,
+    "fields": {
+        "titre": "Projet Personnel et Professionnel",
+        "description": "Introduction au monde de l'entreprise",
+        "cm": 10,
+        "td": 8,
+        "tp": 0,
+        "credits": 4,
+        "formations": [
+            2,
+            3,
+            5
+        ],
+        "responsables": [
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "uo.ue",
+    "pk": 13,
+    "fields": {
+        "titre": "Ocaml",
+        "description": "Langage Ocaml",
+        "cm": 10,
+        "td": 10,
+        "tp": 20,
+        "credits": 6,
+        "formations": [
+            2,
+            3,
+            5
+        ],
+        "responsables": [
+            2
+        ]
+    }
+}
+]

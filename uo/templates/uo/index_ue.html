@@ -1,0 +1,23 @@
+{% extends 'uo/menu.html' %}
+
+{% block title %}Index de toutes les UEs{% endblock %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index UE</title>
+</head>
+{% block content%}
+<body>
+    <ol>
+        <ul>{% for u in ues %}
+            <li>Titre de l'UE n° {{ u.id }}: {{ u.titre }}</li>
+            <a href="{% url 'afficher_ue' u.id %}">-> plus d'infos</a>
+            <a href="{% url 'modifier_ue' u.id %}" class="text-success">-> modifier</a>
+            <a href="{% url 'supprimer_ue' u.id %}" class="text-danger">-> supprimer</a>
+            {% endfor %}
+        </ul>
+    </ol>
+{% endblock %}
+</body>
+</html>

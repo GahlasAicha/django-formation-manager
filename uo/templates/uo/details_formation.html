@@ -1,0 +1,39 @@
+{% extends 'uo/menu.html' %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}Détails de Formation {% endblock %}
+</head>
+<body>
+{% block content %}
+<div class="text-center">
+    <h1>Détails de la formation : {{ formation.intitule }}</h1>
+
+    <p><strong>Nombre d'UE rattachées à cette formation :</strong> {{ nbr_ue }}</p>
+
+    <h2>Responsables d'UE :</h2>
+    <ul>
+        {% for r in liste_responsable_ue %}
+            <li>{{ r.username }} 
+            </br>
+                {{ r.email }}</li>
+        {% empty %}
+        <li>Aucun responsable d'UE trouvé pour cette formation</li>
+        {% endfor %}
+    </ul>
+
+    <p><strong>Total des heures de CM :</strong> {{ total_cm }}</p>
+    <p><strong>Total des heures de TD :</strong> {{ total_td }}</p>
+    <p><strong>Total des heures de TP :</strong> {{ total_tp }}</p>
+
+    <p><strong>Volume total en heures équivalent TD :</strong> {{ total_hrs_equiv_td }}</p>
+
+    <p><strong>Total des ECTS :</strong> {{ total_ects }}</p>
+
+</div>
+    {% endblock %}
+</body>
+</html>

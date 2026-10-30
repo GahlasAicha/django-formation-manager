@@ -1,0 +1,85 @@
+{# Load the tag library #}
+{% load django_bootstrap5 %} 
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>{% block title %}UO{% endblock %}</h1>
+
+
+    
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand">Naviguer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="{% url 'index_ue' %}">Consulter la liste des unités d'enseignements </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'index_formation' %}">Consulter la liste des formations </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'ajouter_ue' %}">Ajouter une unité d'enseignement </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'vue_about' %}">A propos de l'application </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'menu' %}">Retour au menu </a>
+                    </li>
+
+
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <form method="post" action="{% url 'logout' %}">
+                                {% csrf_token %}
+                                <button type="submit">Se déconnecter</button>
+                            </form>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <form method="post" action="{% url 'login' %}">
+                                {% csrf_token %}
+                                <button type="submit">Se connecter</button>
+                            </form>
+                        </li>
+                    {% endif %}
+                   
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+
+    
+     {% block content %}
+
+     <div calss="container-fluid">
+        <div class="text-center">
+        
+            <p><h6>Bienvenue sur l'application UO</h6></br>
+                Commencer à naviger avec la barre au dessus ! </br>
+                N'hésitez pas à vous connecter
+            </p>
+        </div>
+
+     </div>
+     
+     
+     {% endblock %}
+
+
+</body>
+</html>

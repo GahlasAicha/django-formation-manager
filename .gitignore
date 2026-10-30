@@ -1,0 +1,21 @@
+# Python / Django
+__pycache__/
+*.py[cod]
+*.sqlite3
+db.sqlite3
+*.log
+
+# Environnement virtuel
+venv/
+.venv/
+env/
+
+# Secrets / config locale
+.env
+.env.local
+*.pem
+
+# Fichiers système / IDE
+.DS_Store
+.idea/
+.vscode/
