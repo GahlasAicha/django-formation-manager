@@ -1,96 +1,110 @@
-Membres du groupe :
-SEFFAR Nordine nordine.seffar@etu.univ-orleans.fr
-GAHLAS Aicha aicha.gahlas@etu.univ-orleans.fr
-MIMOUN Ali ali.mimoun@etu.univ-orleans.fr
-AISSAT Fatima fatima.aissat@etu.univ-orleans.fr
+# 🎓 Django Formation Manager
 
-Commandes :
+Application web **Django** de gestion de **formations universitaires** et de leurs **unités d'enseignement (UE)**. Le détail d'une formation n'est accessible qu'à l'**enseignant responsable** de cette formation.
 
+> Projet réalisé dans le cadre du module *Framework Web 1* — Master Informatique, Université d'Orléans (2024-2025).
 
-quesiton1 :
+---
 
-docker build . -f Dockerfile --build-arg USERNAME=$(basename $(id -un) @campus.univ-orleans.fr) --build-arg USERID=$(id -u) --tag ct
+## ✨ Fonctionnalités
 
-docker run -ti -p 8080:8000 -v $PWD:/home/user/workspace ct
+- 📚 **Gestion des formations** — liste, détail, consultation
+- 🧩 **Gestion des UE** — ajout, affichage, suppression, rattachées aux formations
+- 👨‍🏫 **Enseignants** — comptes utilisateurs responsables de formations
+- 🔐 **Accès restreint** — le détail d'une formation (`/details/<id>`) n'est visible que si l'utilisateur connecté en est le **responsable**
+- 🛠️ **Interface d'administration** Django
 
-(Dans vscode ->)
+---
 
-django-admin startproject ct
+## 🏗️ Structure du projet
 
-cd ct
+```
+django-formation-manager/
+├── ct/                     # Configuration du projet Django
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py / asgi.py
+├── uo/                     # Application principale (Université d'Orléans)
+│   ├── models.py           # Formation, UE, (enseignant = User)
+│   ├── views.py            # Logique métier + contrôle d'accès responsable
+│   ├── forms.py
+│   ├── urls.py
+│   ├── admin.py
+│   ├── migrations/
+│   ├── fixtures/           # Données de démo : enseignant, formation, ue
+│   └── templates/          # Pages HTML (index, détail, ajout, login…)
+└── manage.py
+```
 
-python manage.py startapp uo
+---
 
-python manage.py runserver 0.0.0.0:8000 &
+## 🛠️ Stack technique
 
-question 2 :
+| | |
+|---|---|
+| **Framework** | Django (Python) |
+| **Base de données** | SQLite |
+| **Templates** | Django Templates (HTML) |
+| **Auth** | Système d'authentification Django |
+| **Conteneurisation** | Docker |
 
-question 3 :
+---
 
+## 🚀 Installation & lancement
+
+### Avec Python (local)
+
+```bash
+# 1. Environnement virtuel
+python -m venv venv
+venv\Scripts\activate         # Windows
+# source venv/bin/activate    # macOS / Linux
+
+# 2. Dépendances
+pip install django
+
+# 3. Configurer le SECRET_KEY (voir section ci-dessous)
+
+# 4. Base de données + données de démo
 python manage.py migrate
+python manage.py loaddata enseignant formation ue
 
+# 5. (optionnel) compte administrateur
 python manage.py createsuperuser
 
-admin
+# 6. Lancer le serveur
+python manage.py runserver
+```
 
-admin@gmail.com
+Application accessible sur `http://localhost:8000`.
 
-admin
+### Avec Docker
 
-admin
+```bash
+docker build . -f Dockerfile --tag ct
+docker run -ti -p 8080:8000 -v $PWD:/home/user/workspace ct
+python manage.py runserver 0.0.0.0:8000
+```
 
-y
+---
 
-question 4 :
+## 🔑 Configuration du SECRET_KEY
 
-python manage.py dumpdata auth.User --indent 2 > uo/fixtures/enseignant.json
+Par sécurité, la vraie clé n'est **pas** versionnée. Dans `ct/settings.py`, la valeur est un placeholder (`django-insecure-change-me`). Génère ta propre clé :
 
-python manage.py loaddata enseignant
+```bash
+python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+```
 
-question 5 :
+puis remplace la valeur de `SECRET_KEY` (idéalement via une variable d'environnement en production).
 
-python manage.py makemigrations uo
+---
 
-python manage.py migrate
+## 👥 Auteurs
 
-question 6 :
+Projet de groupe — Master Informatique, Université d'Orléans :
 
-python manage.py dumpdata uo.Formation --indent 4 > uo/fixtures/formation.json
-
-python manage.py loaddata formation
-
-question 7 :
-
-python manage.py makemigrations uo
-
-python manage.py migrate
-
-question 8 :
-
-python manage.py dumpdata uo.UE --indent 4 > uo/fixtures/ue.json
-
-python manage.py loaddata ue
-
-question 9 :
-
-question 10 :
-
-question 11 :
-
-question 12 :
-
-question 13 :
-
-question 14 :
-
-question 15 :
-
-question 16 :
-
-question 17 :
-
-question 18 :
-
-question 19 :
-
-question 20 :
+- **Gahlas Aicha** — [github.com/GahlasAicha](https://github.com/GahlasAicha)
+- **Seffar Nordine**
+- **Mimoun Ali**
+- **Aissat Fatima**
